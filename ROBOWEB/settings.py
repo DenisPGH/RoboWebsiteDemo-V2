@@ -27,7 +27,10 @@ SECRET_KEY = 'django-insecure-+0^i!u%h3!88gle*=0#xpu+0l5i07cc_pzttr!+s-ro=bftu0r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'robo-website.herokuapp.com',
+]
 
 
 # Application definition
