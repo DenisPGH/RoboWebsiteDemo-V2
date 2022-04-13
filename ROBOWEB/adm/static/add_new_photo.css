@@ -1,0 +1,17 @@
+body{
+    background: #bcec0d;
+}
+
+.add {
+    width: 35%;
+    border-width: 2px;
+    border-color: white;
+    border-radius: 0.5cm;
+    background: #82e056;
+    margin-left: 26rem;
+    margin-top: 10rem;
+}
+.button-add{
+    text-align: center;
+
+}

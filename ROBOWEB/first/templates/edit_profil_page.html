@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+     {% load static %}
+    <link rel="stylesheet" href="{% static 'edit_profil.css' %}">
+</head>
+<body>
+ <div>
+     <form class="edit" method="post" action="{% url 'edit_profil_page' user_for_edit.pk %}" enctype="multipart/form-data" >
+            {{ form }}
+         {% csrf_token %}
+         <button type="submit" value="Update" class="save" >SAVE</button>
+
+     </form>
+
+
+
+ </div>
+</body>
+</html>

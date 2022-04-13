@@ -1,0 +1,30 @@
+
+nav{
+  color: blue;
+  background: #82e056;
+  text-align: center;
+}
+
+table, th, td {
+  border: 1px solid;
+}
+table{
+  background: white;
+}
+body{
+  background: #bcec0d;
+}
+.edit{
+  background: #82e056;
+  color: red;
+}
+.back{
+  color: red;
+  background: olive;
+}
+section{
+  width: 20%;
+}
+footer{
+    text-align: center;
+}

@@ -1,0 +1,39 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    background: #82e056;
+}
+.back{
+    text-align: left;
+}
+.galery{
+    margin-left: 33rem;
+}
+
+body {
+    background: greenyellow;
+    text-align: center;
+}
+
+footer{
+    text-align: center;
+}
+
+div img {
+    height: 250px;
+    width: 250px;
+}
+div article {
+    display: inline-block;
+}
+form button{
+    background: white;
+    color: green;
+    border-radius: 1cm;
+    font-size: 20px;
+}
+button:hover{
+    cursor: pointer;
+    color: white;
+    background: red;
+}

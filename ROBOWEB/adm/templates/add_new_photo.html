@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add photo</title>
+     <link rel="stylesheet" href="{% static 'add_new_photo.css' %}">
+</head>
+<body>
+<div class="add">
+            <form class="button-add" method="post" action='{% url 'add_new_photo' %}' enctype="multipart/form-data">
+                {{ form }}
+                {% csrf_token %}
+                <button>add</button>
+            </form>
+    </div>
+
+
+</body>
+</html>

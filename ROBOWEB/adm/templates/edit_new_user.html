@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EDIT</title>
+    <link rel="stylesheet" href="{% static 'edit_new_user.css' %}">
+</head>
+<body>
+    <h2> You will edit {{ user_for_edit.first_name }} {{ user_for_edit.last_name }}</h2>
+{#    <h2> {{ edit }}</h2>#}
+    <form class="confirm" method='post' action="{% url 'edit_new_user' user_for_edit.pk %}">
+        {{ user_form }}
+        <button>Confirm and Save</button>
+        {% csrf_token %}
+    </form>
+{#    <form  method='get' action="{% url 'admin_page' %}">#}
+{#        <button class="reject">Reject</button>#}
+{#        {% csrf_token %}#}
+{#    </form>#}
+</body>
+</html>

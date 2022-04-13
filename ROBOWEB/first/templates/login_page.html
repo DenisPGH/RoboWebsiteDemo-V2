@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+{% block footer %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTROL PANEL</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'login_page.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            {% if current_user.type_user == 'admin' %}
+            <li>
+                <form method="get" action="{% url 'admin_page' %}">
+                    <button class="button">Admin page </button>
+                    {% csrf_token %}
+                </form>
+
+            </li>
+            {% endif %}
+            <li>
+                <form class="back" action="{% url 'logout' %}">
+                    <button class="back" >LOG OUT</button>
+                    {% csrf_token %}
+                </form>
+            </li>
+            <li>
+                <form class="profil" action="{% url 'profil_page' current_user.user_id %}">
+                    <button class="profil" >HELLO,  {{ current_user.first_name|upper }}!</button>
+                    {% csrf_token %}
+                </form>
+            </li>
+            <li>Contact Me</li>
+            <li>About Me</li>
+            <li>
+                <a href={% url 'galery' %} >Galery</a>
+            </li>
+
+        </ul>
+    </nav>
+
+    {% if current_user.access %}
+    <header>
+        <div class="user">
+            {% if current_user.picture %}
+            <img height="200" width="170" src="{{ current_user.picture.url}}" alt="pic">
+            {% endif %}
+        </div>
+
+        </header>
+
+
+
+    
+    <section class="commands">
+        <h3 id="cc">DIRECTION</h3>
+        <form action="{% url 'button_ahead' %}">
+            <button id="up">AHEAD</button>
+            {% csrf_token %}
+        </form>
+        <form class="mid" action="#">
+            <button  id="left">LEFT</button>
+        </form>
+        <form class="mid" action="{% url 'button_stop' %}">
+            <button class="mid" id="stop">STOP</button>
+            {% csrf_token %}
+        </form>
+        <form class="mid" action="#">
+            <button  id="right">RIGHT</button>
+        </form>
+        <form action="#">
+            <button id="down">BACK</button>
+        </form>
+
+    </section>
+    <section class="second" >
+
+        <article class="say " id="say_main">
+            <div>
+                    <form   class="say_but" method="post" action="{% url 'login_page' %}">
+                        {% csrf_token %}
+                        {{ say_form }}
+                        <button class="say_but" >ROBO speak:</button>
+                    </form>
+                </div>
+            <h3 class="say_some" id="say"> Robo will say: "{{ to_write}}"</h3>
+        </article>
+        <article class="video">
+{#            <div>#}
+                <form class="videoo" action="{% url 'play_video_button' %}">
+                    <button class="videoo" >Play Video</button>
+                    {% csrf_token %}
+                </form>
+                <form class="videoo" action="{% url 'stop_video_button' %}">
+                    <button class="videoo videoos" >Stop video</button>
+                    {% csrf_token %}
+                </form>
+            {% if status_video %}
+            <article class="monitor">
+                     <h2 class="text-mon">HERE VIDEO PLAY</h2>
+
+            </article>
+                {% else %}
+            <article class="monitor_stop">
+                     <h2 class="text-mon">HERE VIDEO STOP</h2>
+            </article>
+                {% endif %}
+
+        </article>
+
+
+
+        
+
+    </section>
+    {% else %}
+        <div class="aces">
+            <h2 >
+            Very soon You will have permision to use Robowebsite.
+            </h2>
+        </div>
+    {% endif %}
+
+{#    <footer>&copy; 2022 All rights reserved Denislav Petrov </footer>#}
+
+{#<a href="{% url 'open_video' %}"#}
+{#   onclick="window.open(this.href,'targetWindow',#}
+{#                                   `toolbar=no,#}
+{#                                    location=no,#}
+{#                                    status=no,#}
+{#                                    menubar=no,#}
+{#                                    scrollbars=yes,#}
+{#                                    resizable=yes,#}
+{#                                    width=300px,#}
+{#                                    height=300px`);#}
+{#    return false;">Deni</a>#}
+</body>
+</html>
+{% endblock %}

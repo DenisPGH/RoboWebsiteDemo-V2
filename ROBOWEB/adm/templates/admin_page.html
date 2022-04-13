@@ -1,0 +1,187 @@
+{% extends 'base.html' %}
+{% block footer %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ADMIN PAGE</title>
+    <link rel="stylesheet" href="{% static 'admin_page.css' %}">
+</head>
+<body>
+<nav>
+
+    Admin Panel
+</nav>
+        <section class="bac">
+            <form class="bac" method='get' action={% url 'login_page' %} >
+                 <button class="back" type='submit' >BACK</button>
+            </form>
+        </section>
+<h2> Waiting users here:</h2>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>USERNAME</th>
+        <th>Send on</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Born</th>
+        <th>Password</th>
+        <th>Picture</th>
+        <th>Type user</th>
+{#        <th>Edit</th>#}
+{#        <th>Reject</th>#}
+
+    </tr>
+    {%  for each in waiting_users %}
+        <tr>
+
+            <th>{{ each.id }}</th>
+            <th>{{ each.user_name }}</th>
+            <td>{{ each.CREATE_ON }}</td>
+            <td>{{ each.first_name }}</td>
+            <td>{{ each.last_name }}</td>
+            <td>{{ each.email }}</td>
+            <td>{{ each.born }}</td>
+            <td>{{ each.password }}</td>
+            <td>
+                {% if each.picture %}
+                <img height="40" src="{{ each.picture.url}}" alt="pic">
+                {% endif %}
+            </td>
+            <td>{{ each.type_user }}</td>
+{#            <td>#}
+{#                <a href='{% url 'edit_new_user' each.pk %}'>EDIT</a>#}
+{#                <form method='post' action="{% url 'admin_page' %}">#}
+{#                    <input class="edit" type="button" value="{{ each.pk }}">#}
+{#                    {{ checkbox }}#}
+{#                </form>#}
+{#            </td>#}
+{#            <td>#}
+{#                <a href="{% url 'reject_new_user' each.pk %}">REJECT</a>#}
+{##}
+{#            </td>#}
+        </tr>
+
+    {% endfor %}
+</table>
+
+<h2> Users :</h2>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Email</th>
+        <th>Password</th>
+
+
+    </tr>
+    {%  for each in all_users %}
+        <tr>
+            <th>{{ each.pk }}</th>
+            <td>{{ each.email }}</td>
+            <td>{{ each.password }}</td>
+
+        </tr>
+
+    {% endfor %}
+</table>
+
+<h2> Persons :</h2>
+<table>
+    <tr>
+        <th>User_ID</th>
+        <th>Permission</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Born</th>
+        <th>Picture</th>
+        <th>Type user</th>
+        <th>------</th>
+        <th>------</th>
+
+
+    </tr>
+    {%  for each in all_profiles %}
+        <tr>
+            <th>{{ each.user_id }}</th>
+            <th>{{ each.access }}</th>
+            <td>{{ each.first_name }}</td>
+            <td>{{ each.last_name }}</td>
+            <td>{{ each.born }}</td>
+            <td> <form enctype="multipart/form-data">
+                {% if each.picture %}
+                <img height="40" src="{{ each.picture.url}}" alt="pic">
+                {% endif %}
+                </form>
+            </td>
+            <td>{{ each.type_user }}</td>
+            <td>
+                 <form method="post" action="{% url 'give_access_new_user' each.pk %}" >
+                    {% csrf_token %}
+                 <button>Give access</button>
+                </form>
+            </td>
+            <td>
+                 <form method="post" action="{% url 'reject_access_new_user' each.pk %}" >
+                    {% csrf_token %}
+                 <button>Deni access</button>
+                </form>
+            </td>
+
+
+        </tr>
+
+    {% endfor %}
+</table>
+
+{#        <div>#}
+{#            {{ name_for_edit.first_name }}#}
+{#        </div>#}
+
+<h2> GALERY :</h2>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>path</th>
+        <th>Link</th>
+        <th>Delete</th>
+
+
+
+    </tr>
+    {%  for each in galery %}
+        <tr>
+            <th>{{ each.id }}</th>
+            <td>{{ each.pic}}</td>
+            <td>{{ each.link}}</td>
+            <td>
+                <form  enctype="multipart/form-data">
+                {% if each.link %}
+                <img height="60" src="{{ each.link.url }}" alt="pic{{ each.pk }}">
+                {% endif %}
+                </form>
+            </td>
+            <td>
+                <form method="post" action="{% url 'delete_pic_galery' each.id %}" >
+
+                    {% csrf_token %}
+                 <button>Delete</button>
+                </form>
+            </td>
+
+        </tr>
+
+    {% endfor %}
+</table>
+
+<form method="get"  action='{%  url 'add_new_photo' %}' >
+{#    {{ picture }}#}
+    {% csrf_token %}
+    <button> More...</button>
+</form>
+</body>
+</html>
+{% endblock %}

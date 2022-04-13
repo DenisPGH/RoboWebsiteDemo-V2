@@ -1,0 +1,73 @@
+.Title_my {
+    color: black;
+    background: greenyellow;
+    text-align: center;
+    font-size: 2rem;
+}
+body  {
+    background-image: url("../../../media/pictures/nanorobo_3.jpg");
+    background-size: cover;
+
+}
+main{
+    text-align: center;
+    padding: 14rem;
+}
+section{
+    display: flex;
+    flex-direction: column;
+}
+.login {
+    display: flex;
+    flex-direction: column;
+}
+form {
+    font-size: 20px;
+    display: inline-block;
+    color: rgb(227, 17, 178);
+    width: 30%;
+}
+
+
+.register{
+    color: rgb(17, 124, 17);
+    background: yellowgreen;
+
+
+}
+button.button {
+    border-radius: 0.2cm;
+    color: rgb(146, 231, 146);
+    background: rgb(73, 34, 214);
+    background-size: cover;
+
+}
+button.login {
+    text-align: center;
+    border-radius: 0.2cm;
+    color: rgb(255, 255, 255);
+    background: rgb(100, 214, 34);
+    background-size: cover;
+
+}
+#name,#pass {
+    display: flex;
+    flex-direction: row;
+    padding-top: 0.2cm;
+
+}
+label {
+    font-weight: bold;
+    color: black;
+}
+article form {
+    display: inline-block;
+}
+
+article.probe {
+    background: red;
+}
+footer{
+    text-align: center;
+}
+

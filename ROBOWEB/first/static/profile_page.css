@@ -1,0 +1,36 @@
+body {
+    background: #bcec0d;
+    text-align: center;
+
+}
+nav {
+    text-align: left;
+}
+nav ul li {
+
+    display: inline-block;
+    margin: auto;
+    padding: 0.5rem;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+}
+.profil_data{
+    border-style: outset;
+    border-color: red;
+    border-radius: 2cm;
+    background: white;
+    width: 30%;
+    margin-left: 27rem;
+
+}
+
+
+
+.profil_data div{
+    padding: 10px;
+
+}
+

@@ -1,0 +1,14 @@
+body{
+    background: greenyellow;
+
+}
+h2 {
+    color: brown;
+    text-align: center;
+}
+.back{
+    color: aliceblue;
+    background: blue;
+    float: left;
+    text-align: center;
+}

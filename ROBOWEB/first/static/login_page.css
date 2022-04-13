@@ -1,0 +1,250 @@
+header{
+    text-align: center;
+    font-size: 1cm;
+    font-weight: bold;
+    color: rgb(12, 95, 12);
+    height: 20px;
+    display: inline-block;
+    
+}
+body header div {
+    float: left;
+    display: inline-block;
+}
+.user{
+    display: inline-block;
+}
+nav {
+    text-align: right;
+    background: #82e056;
+
+}
+nav a{
+    text-decoration: none;
+}
+nav a:visited{
+    text-decoration: peru;
+
+}
+a:hover{
+    text-decoration: yellow;
+}
+button.back{
+    color: aliceblue;
+    background: brown;
+}
+
+section.commands {
+    text-align: center;
+    border-color: white;
+    border-style: dotted;
+    width: 30%;
+    /*margin-left: 3rem;*/
+    
+}
+body section.commands{
+    margin-left: 23rem;
+}
+body section.second{
+    display: flex;
+    flex-direction: row;
+
+
+}
+#cc {
+    color: brown ;
+}
+nav ul li {
+    display: inline-block;
+    margin: auto;
+    padding: 0.5rem;
+    text-decoration: none;
+}
+body{
+    background: rgb(184, 226, 30);
+
+    
+}
+
+
+.videoo{
+    display: inline-block;
+    color: green;
+
+
+    
+}
+.video {
+    border-color: red;
+    border-style: dotted;
+    text-align: center;
+
+}
+.videoos {
+    color: red;
+}
+
+    
+
+
+
+button {
+    text-align: center;
+    border-radius: 0.2cm;
+    color: rgb(10, 10, 10);
+    background: white;
+    font-size: large;
+    
+}
+
+form.mid{
+    display: inline-block;
+    
+}
+#up {
+    color: rgb(74, 16, 235);
+    background: white;
+
+}
+#down {
+    color: rgb(74, 16, 235);
+    background: white;
+}
+
+#stop {
+    color: rgb(235, 16, 16);
+    background: rgb(219, 146, 227);
+    
+}
+
+#left {
+    color: rgb(63, 16, 235);
+    background: white;
+
+}
+#right {
+    color: rgb(74, 16, 235);
+    background: white;
+
+}
+
+footer {
+    text-align: center;
+    
+}
+
+#v{ 
+    
+    background-color: red;
+    border-style: dotted;
+    /*width: 200px;*/
+    /*height: 50px;*/
+    color: green;
+    text-align: center;
+}
+#say_main {
+   
+
+    /*border-style: dotted;*/
+    /*background: white;*/
+    /*width: 200px;*/
+    /*height: 200px;*/
+    /*color: green;*/
+    text-align: center;
+    
+    
+}
+
+
+.say {
+    /*margin: 1rem;*/
+    margin-top: 3rem;
+}
+h3{
+    color: green;
+    text-align: center;
+}
+
+/*body section:nth-child(1) article.say {*/
+/*    text-align: center;*/
+/*}*/
+/*#logo {*/
+/*    width: 120px;*/
+/*    height: 120px;*/
+/*}*/
+.say_but{
+    text-align: center;
+
+    color: blueviolet;
+}
+.denis{
+ text-align: center;
+    /*width: 100px;*/
+}
+
+h2{
+    color: red;
+    text-align: center;
+}
+footer{
+    text-align: center;
+}
+
+.aces{
+    border-radius: 2cm;
+    border-color: #7c112a;
+    border-style: outset;
+    margin-top: 4rem;
+    text-align: center;
+    color: white;
+    background: green;
+    width: 30%;
+    height: 200px;
+    margin-left: 28rem;
+    margin-bottom: 10rem;
+}
+.aces h2{
+    text-align: center;
+    color: white;
+    padding: 30px;
+
+}
+
+.else_admin {
+    border-radius: 2cm;
+    border-color: #7c112a;
+    border-style: outset;
+    text-align: center;
+    color: white;
+    background: green;
+    height: 300px;
+    width: 300px;
+}
+
+article div{
+    color: #7c112a;
+    padding: 1rem;
+}
+
+.monitor{
+
+    background:white ;
+    width: 500px;
+    height: 300px;
+}
+
+.monitor_stop{
+    background:yellow ;
+    width: 500px;
+    height: 300px;
+}
+.text-mon {
+    text-align: center;
+   padding: 5rem;
+}
+
+button:hover{
+    cursor: pointer;
+    color: white;
+    background: red;
+}

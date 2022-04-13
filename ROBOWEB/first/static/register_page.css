@@ -1,0 +1,75 @@
+
+
+body{
+    background: rgb(184, 226, 30);
+
+}
+h2 {
+    color: brown;
+    text-align: center;
+}
+body button.back{
+    color: rgb(223, 62, 8);
+    background: rgb(214, 226, 231);
+    display: inline-block;
+    text-align: center;
+    border-radius: 1cm;
+}
+body button.regi{
+    color: rgb(5, 185, 62);
+    background: rgb(201, 224, 196);
+    display: inline-block;
+    text-align: center;
+    border-radius: 1cm;
+}
+/*body article.field{*/
+/*    text-align: right;*/
+/*    margin-right: 40rem;*/
+/*}*/
+body form{
+    display: flex;
+    flex-direction: column;
+
+
+}
+input{
+    background: wheat;
+    border-radius: 1cm;
+}
+h4{
+    color: red;
+}
+.registrater_person{
+    margin-left: 10rem;
+}
+h3 {
+    margin-left: 23rem;
+}
+
+.danni{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin-left: 29rem;
+
+}
+footer{
+    text-align: center;
+    margin-top: 1rem;
+}
+.field h4{
+    display: inline-block;
+}
+body article.field{
+    text-align: center;
+    width: 35%;
+    margin-left: 25rem;
+    border-radius: 0.2cm;
+    border-style: outset;
+    border-width: 1px;
+    background: #51ea51;
+}
+
+
+
+

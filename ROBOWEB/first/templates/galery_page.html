@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block footer %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GALERY</title>
+    <link rel="stylesheet" href="{% static 'galery_page.css' %}">
+</head>
+<body>
+<nav>
+    <div>
+        <form class="back" action='{% url 'login_page' %}' method='GET'>
+         <button class="back" type=submit >Back</button>
+        {% csrf_token %}
+     </form>
+        </div>
+    <div>
+        <h3 class="galery">GALERY HERE</h3>
+    </div>
+</nav>
+
+        {% for a in pictures  %}
+            <a href="{{ a.link }}">
+            <img src='{{ a.link }}'  alt="robo" width="200px" height="200">
+            </a>
+
+        {% endfor %}
+
+
+</body>
+</html>
+{% endblock %}

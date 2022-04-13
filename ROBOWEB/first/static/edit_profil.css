@@ -1,0 +1,20 @@
+body{
+    background: #bcec0d;
+}
+.delete {
+    background: white;
+    color: red;
+}
+
+.save {
+    background: green;
+    color: white;
+}
+.edit{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+div{
+    margin-left: 27rem;
+}

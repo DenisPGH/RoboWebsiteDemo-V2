@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <form class="back" action="{% url 'first_page' %}">
+                    <button class="back" >LOG OUT</button>
+                    {% csrf_token %}
+                </form>
+            </li>
+            <li>
+                <form class="profil" action="{% url 'profil_page' pk %}">
+                    <button class="profil" >HELLO,  {{ user|upper }}!</button>
+                    {% csrf_token %}
+                </form>
+            </li>
+            <li>Contact Me</li>
+            <li>About Me</li>
+            <li>
+                <a href={% url 'galery' %} >Galery</a>
+            </li>
+
+        </ul>
+    </nav>
+    <header>
+        <div class="user">
+            <img height="200" width="170" src="{{ current_user.picture.url}}" alt="pic">
+        </div>
+
+        </header>
+
+{% block nav %}
+{% endblock %}
+
+</body>
+</html>

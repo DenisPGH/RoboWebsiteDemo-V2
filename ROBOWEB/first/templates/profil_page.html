@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block footer %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profil {{ object.first_name }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'profile_page.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <form class="back" action="{% url 'login_page'  %}">
+                    <button class="back" >Back</button>
+                    {% csrf_token %}
+                </form>
+            </li>
+
+        </ul>
+    </nav>
+
+    <section class="profil_data">
+{#        <div>#}
+{#            Is_stuff: {{ form.is_staff }}#}
+{##}
+{#            #}
+{#        </div>#}
+        <div>
+            First Name :{{ profile.first_name }}
+        </div>
+         <div>
+            Last Name: {{ profile.last_name }}
+        </div>
+        <div>
+{#            Password: {{ form.password }}#}
+{#            {{ form }}#}
+        </div>
+        <div>
+            Born: {{ profile.born }}
+        </div>
+        <div>
+            Email: {{ user_profil.email }}
+        </div>
+        <div>
+
+        </div>
+        <div>
+            Picture:
+            {%  if profile.picture %}
+            <img height="200" width="170" src="{{ profile.picture.url}}" alt="pic">
+            {% endif %}
+        </div>
+        <div>
+            <form class="edit" method="post" action="{% url 'edit_profil_page' profile.pk %}">
+                    <button class="edit" >EDIT</button>
+                    {% csrf_token %}
+            </form>
+            <form class="edit" method="post" action="{% url 'change_password_page' %}">
+                    <button class="edit" type="submit" >CHANGE PASSWORD</button>
+                    {% csrf_token %}
+            </form>
+
+{#            <form class="delete" method="get" action="{% url 'delete_profil_page'  object.pk %}">#}
+{#                    <button class="delete" >Delete</button>#}
+{#                    {% csrf_token %}#}
+{#            </form>#}
+
+        </div>
+    </section>
+</body>
+</html>
+{% endblock%}

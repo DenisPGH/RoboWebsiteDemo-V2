@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h2> YOU made it!</h2>
+        <form class="back" method="get" action="{% url 'login_page'  %}">
+                    <button type="submit" class="edit" >BACK</button>
+                    {% csrf_token %}
+            </form>
+</div>
+</body>
+</html>

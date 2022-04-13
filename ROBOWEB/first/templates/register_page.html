@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block footer %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registration</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'register_page.css' %}">
+
+</head>
+<body>
+    <h2> PLEASE, FILL THE FORM BELOW.</h2>
+{#    <article class="register_person">#}
+{#        <h3>#}
+{#            {% for each in info %}#}
+{#                <li>#}
+{#                    {{ each }}#}
+{#                </li>#}
+{#            {% endfor %}#}
+{#        </h3>#}
+{##}
+{#    </article>#}
+    <article class="field">
+        <form class="field" enctype="multipart/form-data" method='post' action="{% url 'register_page' %}">
+            {{ form }}
+
+         <button class="regi"> Registration</button>
+            {% csrf_token %}
+        </form>
+        <form  class="back" action="{% url 'first_page' %}">
+         <button class="back"> BACK</button>
+            {% csrf_token %}
+        </form>
+    </article>
+
+
+</body>
+</html>
+{% endblock %}

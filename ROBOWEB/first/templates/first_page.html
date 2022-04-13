@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block footer %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NANOROBO</title>
+    <link rel="stylesheet" href="{% static 'first_page.css' %}">
+{#    <link rel="stylesheet" href="{% static 'first_page.css' %}">#}
+</head>
+<body>
+    <header class="Title_my"> WEBSITE OF NANOROBO</header>
+    <main>
+        <section>
+            <form class="login" method='post' action="{% url 'first_page' %}">
+                {{ form }}
+                <button class="login">LOGIN</button>
+                {% csrf_token %}
+            </form>
+
+            <form method="post" action="{% url 'register_page' %}">
+                <button class="button">Register now </button>
+                {% csrf_token %}
+            </form>
+{#            <div>#}
+{#                {% if invalid_user %}#}
+{#                    <h2> Username not in DB!!</h2>#}
+{#                {% endif %}#}
+{#            </div>#}
+
+
+        </section >
+    </main>
+
+    
+</body>
+</html>
+{% endblock %}
