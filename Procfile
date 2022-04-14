@@ -1,2 +1,2 @@
-web: gunicorn --pythonpath  ROBOWEB ROBOWEB.wsgi
+web: gunicorn --pythonpath  RoboWebsiteDemo-V2 ROBOWEB.wsgi
 release: python manage.py migrate
